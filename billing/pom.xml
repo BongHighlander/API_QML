@@ -1,0 +1,108 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+		<modelVersion>4.0.0</modelVersion>
+		<parent>
+				<groupId>ca.ulaval.glo4002</groupId>
+				<artifactId>projet2017</artifactId>
+				<version>1.0-SNAPSHOT</version>
+		</parent>
+		<artifactId>billing</artifactId>
+
+		<build>
+				<plugins>
+						<plugin>
+								<groupId>org.apache.maven.plugins</groupId>
+								<artifactId>maven-compiler-plugin</artifactId>
+						</plugin>
+				</plugins>
+		</build>
+
+		<properties>
+				<jackson.core.version>2.9.1</jackson.core.version>
+				<glassfish.jersey.containers.version>2.26</glassfish.jersey.containers.version>
+				<maven-checkstyle.version>2.17</maven-checkstyle.version>
+				<sun.jersey.version>1.19.4</sun.jersey.version>
+				<hibernate.version>5.0.12.Final</hibernate.version>
+				<h2db.version>1.4.196</h2db.version>
+		</properties>
+
+		<dependencies>
+				<dependency>
+						<groupId>org.glassfish.jersey.containers</groupId>
+						<artifactId>jersey-container-jetty-servlet</artifactId>
+						<version>${glassfish.jersey.containers.version}</version>
+				</dependency>
+				<dependency>
+						<groupId>org.glassfish.jersey.inject</groupId>
+						<artifactId>jersey-hk2</artifactId>
+						<version>${glassfish.jersey.containers.version}</version>
+				</dependency>
+				<dependency>
+						<groupId>com.fasterxml.jackson.core</groupId>
+						<artifactId>jackson-core</artifactId>
+						<version>${jackson.core.version}</version>
+				</dependency>
+				<dependency>
+						<groupId>com.fasterxml.jackson.core</groupId>
+						<artifactId>jackson-annotations</artifactId>
+						<version>${jackson.core.version}</version>
+				</dependency>
+				<dependency>
+						<groupId>com.fasterxml.jackson.core</groupId>
+						<artifactId>jackson-databind</artifactId>
+						<version>${jackson.core.version}</version>
+				</dependency>
+				<dependency>
+						<groupId>org.glassfish.jersey.media</groupId>
+						<artifactId>jersey-media-json-jackson</artifactId>
+						<version>${glassfish.jersey.containers.version}</version>
+						<scope>runtime</scope>
+				</dependency>
+
+
+				<!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-client -->
+				<dependency>
+						<groupId>com.sun.jersey</groupId>
+						<artifactId>jersey-client</artifactId>
+						<version>${sun.jersey.version}</version>
+				</dependency>
+				<!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-json -->
+				<dependency>
+						<groupId>com.sun.jersey</groupId>
+						<artifactId>jersey-json</artifactId>
+						<version>${sun.jersey.version}</version>
+				</dependency>
+
+				<dependency>
+						<groupId>org.hibernate</groupId>
+						<artifactId>hibernate-core</artifactId>
+						<version>${hibernate.version}</version>
+				</dependency>
+				<dependency>
+						<groupId>com.h2database</groupId>
+						<artifactId>h2</artifactId>
+						<version>${h2db.version}</version>
+				</dependency>
+		</dependencies>
+
+		<reporting>
+				<plugins>
+						<plugin>
+								<groupId>org.apache.maven.plugins</groupId>
+								<artifactId>maven-checkstyle-plugin</artifactId>
+								<version>${maven-checkstyle.version}</version>
+								<configuration>
+										<configLocation>checkstyle.xml</configLocation>
+								</configuration>
+								<reportSets>
+										<reportSet>
+												<reports>
+														<report>checkstyle</report>
+												</reports>
+										</reportSet>
+								</reportSets>
+						</plugin>
+				</plugins>
+		</reporting>
+
+</project>
